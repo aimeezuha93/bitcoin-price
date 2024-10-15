@@ -1,0 +1,24 @@
+{
+    "schedule_interval": null,
+    "default_args": {
+        "owner": "airflow",
+        "start_date": "2022-03-04",
+        "email_on_failure": false,
+        "email_on_retry": false,
+        "retries": 0
+    },
+    "api": {
+        "url": "https://api.coingecko.com/api/v3",
+        "key": "CG-ViMvxvaFYjRwTdhdC85NYqxH",
+        "headers": {
+            "accept": "application/json"
+        }
+    },
+    "db": {
+        "host": "bitcoin-price-postgres-1",
+        "user": "airflow",
+        "password": "airflow",
+        "database": "airflow",
+        "port": "5432"
+    }
+}
