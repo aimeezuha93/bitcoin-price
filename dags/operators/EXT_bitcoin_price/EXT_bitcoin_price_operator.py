@@ -1,12 +1,12 @@
 import requests
 import logging
-#import pandas as pd
+import pandas as pd
 from typing import Dict
 from pathlib import Path
 from sqlalchemy import text
-#from config.queries import *
-# from common.tools.dag_settings import get_dag_tmp_files_path, save_df_file
-# from common.tools.database_connection import get_engine
+from config.queries import *
+from common.tools.dag_settings import get_dag_tmp_files_path, save_df_file
+from common.tools.database_connection import get_engine
 
 
 class CoinGeckoHandler():
@@ -92,9 +92,9 @@ class BitcoinHandler():
         return file_config
 
     def _calculate_moving_average(self, file_config: Dict[str, str]):
-        # df = pd.read_pickle(file_config["tmp_path"])
-        # df["moving_average"] = df["price"].rolling(window=5).mean()
-        # df["date"] = (pd.to_datetime(df["date"], unit="ms"))
+        df = pd.read_pickle(file_config["tmp_path"])
+        df["moving_average"] = df["price"].rolling(window=5).mean()
+        df["date"] = (pd.to_datetime(df["date"], unit="ms"))
 
         df.to_sql(
             "moving_average",

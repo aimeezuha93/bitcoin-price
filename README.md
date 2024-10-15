@@ -148,5 +148,13 @@ Other tools that could be an option to Airflow:
 * Apache Flink: Stream processing tool
 * Amazon Kinesis.
 
-### Data Analysis:
+### Testing
+---
+
+To do the testing, please ejcute the following Python command.
+```python
+python3 tests/test_bitcoin_price.py
+```
+
+### Data Analysis
 ---
